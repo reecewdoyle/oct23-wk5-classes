@@ -1,7 +1,9 @@
 
 class Media {
-    constructor(){
+	constructor(newName){
 
-        this.name = newName;
-    }
+		this.name = newName;
+	}
 }
+
+module.exports = {Media}

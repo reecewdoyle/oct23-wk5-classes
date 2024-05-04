@@ -1,17 +1,41 @@
 
-// Import Library class, Book class, Audiobook class, Games class, Movies class, Music class
+// Import Library class, Book class, Audiobook class, Games class, Movies class, Music class 
 
+const { Book } = require("./Book");
+const { Library } = require("./Library");
 const { Media } = require("./Media");
 
-// Create instances of classes
+// Create instances of classes 
 
-let lotr = new Media("fellowship of the ring");
+// let lotr = new Media("fellowship of the ring");
+let lotr = new Book("fellowship of the ring", "fancy");
 
-// Lord of the Rings as an instance of Book Class
+console.log(lotr);
+console.log(lotr.name);
+console.log(lotr.edition);
 
-// Do things with those instances
+// Lord of the Rings as a instance of Book class 
+
+// Do things with those instances 
 
 // Create an instance of a Library
-// add media instance into the Library instance
+// add media instances into the Library instance
 
-// Log the data in the library
+let libraryInstance = new Library();
+libraryInstance.books.push(lotr);
+
+// Log the data in the library 
+console.log(libraryInstance);
+
+console.log(libraryInstance.books[0].name);
+
+let lotr2 = new Book("the two towers", "fancy");
+
+
+console.log(libraryInstance.books.length);
+console.log(Book.count);
+lotr2 = null;
+Book.removeBook();
+console.log(Book.count);
+
+console.log(libraryInstance.books[0].getBookName());
